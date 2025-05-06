@@ -34,4 +34,4 @@ app.get('/api/users', async (req, res) => {
 });
 
 app.listen(port, () => {
- Hawkins console.log(`Server running on port ${port}`);
+ console.log(`Server running on port ${port}`);
