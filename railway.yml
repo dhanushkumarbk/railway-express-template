@@ -1,0 +1,18 @@
+$schema: https://railway.app/railway.schema.json
+services:
+  - name: express-app
+    build:
+      context: .
+    start:
+      command: node index.js
+    env:
+      PORT: 3000
+      DATABASE_URL: ${{ postgres.DATABASE_URL }}
+    domains:
+      - prefix: express-template
+  - name: postgres
+    image: postgres:16
+    env:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: myapp
